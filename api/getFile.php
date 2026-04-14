@@ -1,7 +1,7 @@
 <?php
 // URL of the .gme file you want to fetch
 $url = $_GET['url'];
-$valid_url_regex = '/^https:\/\/cdn\.ravensburger\.de\//m';
+$valid_url_regex = '/^https:\/\/cdn\.ravensburger\.cloud\//m';
 $allowedOrigins = [
     'https://localhost:4541',
     'https://tiptoi-manager.nico.dev',
