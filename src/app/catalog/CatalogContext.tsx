@@ -49,7 +49,7 @@ export const CatalogContextProvider: React.FC<{
         return;
       }
       const catalog = await apiGet<Catalog>(
-        `${API_BASE}api/getCatalog.php?language=${languageISO}`
+        `${API_BASE}api/getCatalog?language=${languageISO}`
       );
       await setLocalItem(`catalog-${languageISO}`, JSON.stringify(catalog));
       setCatalog(catalog);

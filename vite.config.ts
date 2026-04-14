@@ -53,10 +53,10 @@ export default defineConfig({
     },
   },
   server: {
-    https: {
+    https: process.env.SSL_KEY && process.env.SSL_CRT ? {
       key: fs.readFileSync(process.env.SSL_KEY),
       cert: fs.readFileSync(process.env.SSL_CRT),
-    },
+    } : false,
     port: Number(process.env.PORT) || 3000,
   },
   plugins: [

@@ -1,6 +1,7 @@
 <?php
 
 $allowedOrigins = [
+    'http://localhost:3000',
     'https://localhost:4541',
     'https://tiptoi-manager.nico.dev',
 ];
@@ -59,8 +60,14 @@ $origin = $_SERVER['HTTP_ORIGIN'];
 
 if (in_array($origin, $allowedOrigins)) {
     header("Access-Control-Allow-Origin: $origin");
+    header("Access-Control-Allow-Methods: *");
+    header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, content-type");
 }
-header("Access-Control-Allow-Methods: *");
-header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, content-type");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
 header("Content-Type: application/json");
 echo $response;

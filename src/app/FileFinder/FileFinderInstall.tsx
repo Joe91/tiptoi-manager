@@ -50,7 +50,7 @@ const FileFinderInstall: React.FC<{
     setPending(true);
     try {
       const res = await fetch(
-        `${API_BASE}api/getFile.php?url=${encodeURI(gameFile.url)}`
+        `${API_BASE}api/getFile?url=${encodeURI(gameFile.url)}`
       );
       const blob = await res.blob();
       const text = await blobToString(blob);
