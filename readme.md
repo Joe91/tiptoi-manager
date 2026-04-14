@@ -4,7 +4,7 @@ Tiptoi manager is a Webapplication to manage your [Tiptoi](https://www.ravensbur
 
 It allows you to find and download audio files for your Tiptoi books and games and directly install them on your Tiptoi pen:
 
-https://tiptoi-manager.nico.dev/
+https://tiptoi-manager.vercel.app/
 
 ## Technical details
 
